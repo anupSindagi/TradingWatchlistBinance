@@ -1,3 +1,7 @@
+/*
+ * This page fetches and processes the data used for winner and loser tables for BTC and USDT market
+ * @author Martin Li
+ */
 import { useEffect, useState } from "react";
 import { useGlobalContext } from "../AppContext.jsx";
 import { useNavigate } from "react-router-dom";

@@ -1,3 +1,8 @@
+/*
+ * This component holds four tables showing the current top 10 winners and losers of BTC and USDT
+ * market. Data ordered by the change percentage.
+ * @author Martin Li
+ */
 export const BTCTable = ({btcWinner, btcLoser, usdtWinner, usdtLoser}) => {
 
     return (
