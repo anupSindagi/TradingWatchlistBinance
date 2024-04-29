@@ -52,7 +52,6 @@ export const StockDetailPage = () => {
                 chartData &&
                 <StockChart  chartData={chartData} symbol={symbol}/>    
             }
-            <StockData symbol={symbol}/>
         </div>
     );
 }

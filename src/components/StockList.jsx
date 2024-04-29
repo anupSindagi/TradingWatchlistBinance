@@ -64,58 +64,65 @@ export const StockList = () => {
             {console.log("stock in ele", stock)}
             <table className="mx-auto bg-sky-200 min-w-[1024px] w-auto">
                 <thead className="text-sky-700 text-left">
-                    <tr>
-                        <th className="font-semibold p-2 border-4 border-sky-50">Symbol</th>
-                        <th className="font-semibold border-4 p-2 border-sky-50">Last</th>
-                        <th className="font-semibold border-4 p-2 border-sky-50">Change</th>
-                        <th className="font-semibold border-4 p-2 border-sky-50">%Change</th>
-                        <th className="font-semibold p-2 border-4 border-sky-50">High</th>
-                        <th className="font-semibold p-2 border-4 border-sky-50">Low</th>
-                        <th className="font-semibold p-2 border-4 border-sky-50">Open</th>
-                        <th className="font-semibold p-2 border-4 border-sky-50">Close</th>
-                    </tr>
+                <tr>
+                    <th className="font-semibold p-2 border-4 border-sky-50">Symbol</th>
+                    <th className="font-semibold border-4 p-2 border-sky-50">Last</th>
+                    <th className="font-semibold border-4 p-2 border-sky-50">Change</th>
+                    <th className="font-semibold border-4 p-2 border-sky-50">%Change</th>
+                    <th className="font-semibold p-2 border-4 border-sky-50">High</th>
+                    <th className="font-semibold p-2 border-4 border-sky-50">Low</th>
+                    <th className="font-semibold p-2 border-4 border-sky-50">Open</th>
+                    <th className="font-semibold p-2 border-4 border-sky-50">Close</th>
+                </tr>
                 </thead>
                 <tbody className="bg-sky-100 p-2 text-left text-sky-800 max-h-[65vh] overflow-auto">
-                    {
-                        stock && stock.map(ele =>
-                            <tr key={ele.symbol} className="transition duration-100 hover:scale-[1.01] hover:cursor-pointer hover:bg-sky-200"
-                                onClick={(e) => {
-                                    console.log(e.target.tagName);
-                                    if (!["path", "svg"].includes(e.target.tagName)) navigate(`detail/${ele.symbol}`)
-                                }}
-                            >
-                                <th className="font-semibold p-2 border-4 border-sky-50">
-                                    <span>{ele.symbol}</span>
-                                </th>
-                                <td className="p-2 border-4 border-sky-50">{parseFloat(ele.lastPrice).toFixed(3)}</td>
-                                <td className={`p-2 border-4 border-sky-50 ${ele.priceChange && ele.priceChange > 0 ? `text-green-700` : `text-red-700`}`}>
-                                    {parseFloat(ele.priceChange).toFixed(3)}
-                                    {ele.priceChange > 0 ? <AiFillCaretUp className="inline" /> : <AiFillCaretDown className="inline" />}
-                                </td>
-                                <td className={`p-2 border-4 border-sky-50 ${ele.priceChangePercent && ele.priceChangePercent > 0 ? `text-green-700` : `text-red-700`}`}>
-                                    {`${parseFloat(ele.priceChangePercent).toFixed(3)}%`}
-                                    {ele.priceChangePercent > 0 ? <AiFillCaretUp className="inline" /> : <AiFillCaretDown className="inline" />}
-                                </td>
-                                <td className="p-2 border-4 border-sky-50">{parseFloat(ele.highPrice).toFixed(3)}</td>
-                                <td className="p-2 border-4 border-sky-50">{parseFloat(ele.lowPrice).toFixed(3)}</td>
-                                <td className="p-2 border-4 border-sky-50">{parseFloat(ele.openPrice).toFixed(3)}</td>
-                                <td className="p-2 border-4 border-sky-50">
+                {
+                    stock && stock.map(ele =>
+                        <tr key={ele.symbol}
+                            className="transition duration-100 hover:scale-[1.01] hover:cursor-pointer hover:bg-sky-200"
+                            onClick={(e) => {
+                                console.log(e.target.tagName);
+                                if (!["path", "svg"].includes(e.target.tagName)) navigate(`detail/${ele.symbol}`)
+                            }}
+                        >
+                            <th className="font-semibold p-2 border-4 border-sky-50">
+                                <span>{ele.symbol}</span>
+                            </th>
+                            <td className="p-2 border-4 border-sky-50">{parseFloat(ele.lastPrice).toFixed(3)}</td>
+                            <td className={`p-2 border-4 border-sky-50 ${ele.priceChange && ele.priceChange > 0 ? `text-green-700` : `text-red-700`}`}>
+                                {parseFloat(ele.priceChange).toFixed(3)}
+                                {ele.priceChange > 0 ? <AiFillCaretUp className="inline"/> :
+                                    <AiFillCaretDown className="inline"/>}
+                            </td>
+                            <td className={`p-2 border-4 border-sky-50 ${ele.priceChangePercent && ele.priceChangePercent > 0 ? `text-green-700` : `text-red-700`}`}>
+                                {`${parseFloat(ele.priceChangePercent).toFixed(3)}%`}
+                                {ele.priceChangePercent > 0 ? <AiFillCaretUp className="inline"/> :
+                                    <AiFillCaretDown className="inline"/>}
+                            </td>
+                            <td className="p-2 border-4 border-sky-50">{parseFloat(ele.highPrice).toFixed(3)}</td>
+                            <td className="p-2 border-4 border-sky-50">{parseFloat(ele.lowPrice).toFixed(3)}</td>
+                            <td className="p-2 border-4 border-sky-50">{parseFloat(ele.openPrice).toFixed(3)}</td>
+                            <td className="p-2 border-4 border-sky-50">
                                     <span className="flex justify-between">
                                         {parseFloat(ele.prevClosePrice).toFixed(3)}
                                         <AiFillCloseCircle size={18}
-                                            className="inline fill-sky-300 transition duration-500 hover:scale-125 cursor-pointer hover:fill-sky-500"
-                                            onClick={(e) => {
-                                                e.stopPropagation(); // Prevent triggering the row's onClick
-                                                handleRemoveSymbol(ele.symbol);
-                                            }}
+                                                           className="inline fill-sky-300 transition duration-500 hover:scale-125 cursor-pointer hover:fill-sky-500"
+                                                           onClick={(e) => {
+                                                               e.stopPropagation(); // Prevent triggering the row's onClick
+                                                               handleRemoveSymbol(ele.symbol);
+                                                           }}
                                         />
                                     </span>
-                                </td>
-                            </tr>
-                        )
-                    }
+                            </td>
+                        </tr>
+                    )
+                }
                 </tbody>
             </table>
+            <div onClick={(e) => {
+                navigate('overview')
+            }}>Current Market Overview
+            </div>
         </div>
 
     );

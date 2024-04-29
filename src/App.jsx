@@ -3,6 +3,7 @@ import {StockOverviewPage} from './pages/StockOverviewPage.jsx'
 import {StockDetailPage} from './pages/StockDetailPage.jsx'
 import {AppProvider} from './AppContext.jsx'
 import './index.css'
+import {ChangesRankingPage} from "./pages/ChangesRankingPage.jsx";
 
 export default function App() {
     
@@ -11,10 +12,10 @@ export default function App() {
         <HashRouter>
             <Routes>
                 <Route path="/" element={<StockOverviewPage/>}/>
-                <Route path="/detail/:symbol" element={<StockDetailPage/>}/> 
+                <Route path="/detail/:symbol" element={<StockDetailPage/>}/>
+                <Route path="/overview" element={<ChangesRankingPage/>}/>
             </Routes>
         </HashRouter>
-       
       </AppProvider>
   )
 }
