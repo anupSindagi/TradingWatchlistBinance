@@ -1,5 +1,5 @@
 // This page is used to display the overview of the coins from the watchlist
-// Author: Anup Sindagi
+// @author Martin Li
 
 import { PageLoading } from "../components/PageLoading.jsx"
 import { AutoComplete } from '../components/AutoComplete.jsx'

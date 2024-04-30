@@ -1,5 +1,5 @@
 //This component is used to display the list of coins from watchlist
-// Author: Anup Sindagi
+// @author Martin Li
 
 import { useState, useEffect } from 'react';
 import finnhub from '../apis/finnhub.js'
