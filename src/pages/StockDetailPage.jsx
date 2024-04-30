@@ -1,3 +1,6 @@
+// This page is used to display the details of a coin with charts
+// Author: Anup Sindagi
+
 import {useParams, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {StockChart} from '../components/StockChart.jsx'

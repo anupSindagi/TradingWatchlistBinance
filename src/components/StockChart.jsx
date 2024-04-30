@@ -1,3 +1,6 @@
+// This component is used to display the chart of a coin
+// Author: Anup Sindagi
+
 import Chart from "react-apexcharts"
 import {useState} from "react"
 

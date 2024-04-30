@@ -1,3 +1,6 @@
+// Author: Anup Sindagi
+// This component is used to search for stocks and does autocomplete for the search bar.
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { AiFillCloseCircle, AiFillPlusCircle, AiOutlineLoading3Quarters } from 'react-icons/ai';

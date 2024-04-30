@@ -1,3 +1,5 @@
+// This page is used to display a loading animation while the data is being fetched from the API.
+
 import {AiOutlineLoading3Quarters} from 'react-icons/ai'
 
 export const PageLoading = () => {

@@ -1,3 +1,6 @@
+//This component is used to display the list of coins from watchlist
+// Author: Anup Sindagi
+
 import { useState, useEffect } from 'react';
 import finnhub from '../apis/finnhub.js'
 import { AiFillCaretDown, AiFillCaretUp, AiFillCloseCircle } from 'react-icons/ai'

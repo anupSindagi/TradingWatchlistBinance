@@ -1,3 +1,6 @@
+// This page is used to display the overview of the coins from the watchlist
+// Author: Anup Sindagi
+
 import { PageLoading } from "../components/PageLoading.jsx"
 import { AutoComplete } from '../components/AutoComplete.jsx'
 import { StockList } from '../components/StockList.jsx'
